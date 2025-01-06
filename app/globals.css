@@ -1,16 +1,133 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "highlight.js/styles/monokai-sublime.css";
+@import "devicon/devicon.min.css";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --primary: #82a0aa;
+  --secondary: #b4c6cc;
+  --tertiary: #3c5d69;
+
+  --primary-gray-20: #e6ecee;
+  --primary-gray-40: #cdd9dd;
+  --primary-gray-60: #b4c6cc;
+  --primary-gray-80: #9bb3bb;
+  --primary-gray-100: #82a0aa;
+  --primary-gray: #82a0aa;
+  --accent-20: #d4e2ef;
+  --accent-40: #aac6e0;
+  --accent-60: #7faad1;
+  --accent-80: #558ec2;
+  --accent-100: #2b72b3;
+  --accent: #2b72b3;
+  --white-20: #ffffff;
+  --white-40: #ffffff;
+  --white-60: #ffffff;
+  --white-80: #ffffff;
+  --white-100: #ffffff;
+  --white: #ffffff;
+  --black-20: #cccccc;
+  --black-40: #999999;
+  --black-60: #666666;
+  --black-80: #323232;
+  --black-100: #000000;
+  --black: #000000;
+  --dark-yellow-20: #f8e1d0;
+  --dark-yellow-40: #f1c3a1;
+  --dark-yellow-60: #eaa572;
+  --dark-yellow-80: #e38743;
+  --dark-yellow-100: #dc6914;
+  --dark-yellow: #dc6914;
+  --light-yellow-20: #fff1cc;
+  --light-yellow-40: #ffe399;
+  --light-yellow-60: #ffd566;
+  --light-yellow-80: #ffc732;
+  --light-yellow-100: #ffb900;
+  --light-yellow: #ffb900;
+  --dark-blue-20: #cce0e7;
+  --dark-blue-40: #99c1cf;
+  --dark-blue-60: #66a2b7;
+  --dark-blue-80: #32839f;
+  --dark-blue-100: #006487;
+  --dark-blue: #006487;
+  --middle-blue-20: #d4e2ef;
+  --middle-blue-40: #aac6e0;
+  --middle-blue-60: #7faad1;
+  --middle-blue-80: #558ec2;
+  --middle-blue-100: #2b72b3;
+  --middle-blue: #2b72b3;
+  --light-blue-20: #e0eff6;
+  --light-blue-40: #c1dfed;
+  --light-blue-60: #a2cfe4;
+  --light-blue-80: #83bfdb;
+  --light-blue-100: #64afd2;
+  --light-blue: #64afd2;
+  --dark-green-20: #e0e5d5;
+  --dark-green-40: #c1cbab;
+  --dark-green-60: #a2b181;
+  --dark-green-80: #839757;
+  --dark-green-100: #647d2d;
+  --dark-green: #647d2d;
+  --light-green-20: #e9efd2;
+  --light-green-40: #d3dfa5;
+  --light-green-60: #bdcf78;
+  --light-green-80: #a7bf4b;
+  --light-green-100: #91af1e;
+  --light-green: #91af1e;
+  --dark-purple-20: #e2d2db;
+  --dark-purple-40: #c5a5b7;
+  --dark-purple-60: #a87893;
+  --dark-purple-80: #8b4b6f;
+  --dark-purple-100: #6e1e4b;
+  --dark-purple: #6e1e4b;
+  --light-purple-20: #efd3df;
+  --light-purple-40: #dfa7bf;
+  --light-purple-60: #cf7b9f;
+  --light-purple-80: #bf4f7f;
+  --light-purple-100: #af235f;
+  --light-purple: #af235f;
+  --gray-20: #eaeaea;
+  --gray-40: #d6d6d6;
+  --gray-60: #c1c1c1;
+  --gray-80: #adadad;
+  --gray-100: #999999;
+  --gray: #999999;
+  --dark-blue-gray1-20: #dde3e6;
+  --dark-blue-gray1-40: #bbc8cd;
+  --dark-blue-gray1-60: #99adb4;
+  --dark-blue-gray1-80: #77929b;
+  --dark-blue-gray1-100: #567783;
+  --dark-blue-gray1: #567783;
+  --dark-blue-gray2-20: #d8dee1;
+  --dark-blue-gray2-40: #b1bec3;
+  --dark-blue-gray2-60: #8a9da5;
+  --dark-blue-gray2-80: #637d87;
+  --dark-blue-gray2-100: #3c5d69;
+  --dark-blue-gray2: #3c5d69;
+  --dark-blue-gray3-20: #d2d8db;
+  --dark-blue-gray3-40: #a6b2b7;
+  --dark-blue-gray3-60: #7a8b93;
+  --dark-blue-gray3-80: #4e656f;
+  --dark-blue-gray3-100: #223f4b;
+  --dark-blue-gray3: #223f4b;
+  /* svg */
+  --circle-exclamation: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>');
+  --triangle-exclamation: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>');
+  --circle-xmark: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/></svg>');
+  --lightbulb: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2c0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0c19.8 27.1 39.7 54.4 49.2 86.2l160 0zM192 512c44.2 0 80-35.8 80-80l0-16-160 0 0 16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></svg>');
+  --circle-info: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');
+  --share: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M307 34.8c-11.5 5.1-19 16.6-19 29.2l0 64-112 0C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96l96 0 0 64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z"/></svg>');
+  --terminal: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M9.4 86.6C-3.1 74.1-3.1 53.9 9.4 41.4s32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 9.4 86.6zM256 416l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>');
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
@@ -18,4 +135,200 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.prose a {
+  color: var(--middle-blue-100);
+  text-decoration: underline;
+}
+.prose a:hover {
+  color: var(--light-blue-100);
+  text-decoration: underline;
+}
+.prose div > p {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+.prose code::before {
+  content: "";
+}
+.prose code::after {
+  content: "";
+}
+.prose h3 > code {
+  background-color: var(--primary-gray-20);
+  color: var(--middle-blue-100);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.prose p > code {
+  background-color: var(--primary-gray-20);
+  color: var(--middle-blue-100);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.prose div.admonition > ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+div.admonition {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+div.admonition p {
+  position: relative;
+}
+div.admonition > p::before {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding-left: 1.5rem;
+  white-space: pre;
+}
+div.admonition > p::after {
+  position: absolute;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1.125rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  top: 0.25rem;
+  left: 0rem;
+  content: " ";
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+div.attention {
+  background-color: var(--light-yellow-20);
+  border-left: 4px solid var(--dark-yellow-100);
+}
+div.attention > p::before {
+  color: var(--dark-yellow-100);
+  content: "Attention\A";
+}
+div.attention > p::after {
+  background-color: var(--dark-yellow);
+  mask-image: var(--circle-exclamation);
+}
+
+div.caution {
+  background-color: var(--light-yellow-20);
+  border-left: 4px solid var(--dark-yellow-100);
+}
+div.caution > p::before {
+  color: var(--dark-yellow-100);
+  content: "Caution\A";
+}
+div.caution > p::after {
+  background-color: var(--dark-yellow);
+  mask-image: var(--triangle-exclamation);
+}
+
+div.danger {
+  background-color: var(--light-purple-20);
+  border-left: 4px solid var(--dark-purple-100);
+}
+div.danger > p::before {
+  color: var(--dark-purple-100);
+  content: "Danger\A";
+}
+div.danger > p::after {
+  background-color: var(--dark-purple);
+  mask-image: var(--triangle-exclamation);
+}
+
+div.error {
+  background-color: var(--light-purple-20);
+  border-left: 4px solid var(--dark-purple-100);
+}
+div.error > p::before {
+  color: var(--dark-purple-100);
+  content: "Error\A";
+}
+div.error > p::after {
+  background-color: var(--dark-purple);
+  mask-image: var(--circle-xmark);
+}
+
+div.hint {
+  background-color: var(--light-green-20);
+  border-left: 4px solid var(--dark-green-100);
+}
+div.hint > p::before {
+  color: var(--dark-green-100);
+  content: "Hint\A";
+}
+div.hint > p::after {
+  background-color: var(--dark-green);
+  mask-image: var(--lightbulb);
+}
+
+div.important {
+  background-color: var(--light-yellow-20);
+  border-left: 4px solid var(--dark-yellow-100);
+}
+div.important > p::before {
+  color: var(--dark-yellow-100);
+  content: "Important\A";
+}
+div.important > p::after {
+  background-color: var(--dark-yellow);
+  mask-image: var(--circle-exclamation);
+}
+
+div.note {
+  background-color: var(--light-blue-20);
+  border-left: 4px solid var(--dark-blue-100);
+}
+div.note > p::before {
+  color: var(--dark-blue-100);
+  content: "Note\A";
+}
+div.note > p::after {
+  background-color: var(--dark-blue);
+  mask-image: var(--circle-info);
+}
+
+div.seealso {
+  background-color: var(--light-green-20);
+  border-left: 4px solid var(--dark-green-100);
+}
+div.seealso > p::before {
+  color: var(--dark-green-100);
+  content: "See also\A";
+}
+div.seealso > p::after {
+  background-color: var(--dark-green);
+  mask-image: var(--share);
+}
+
+div.tip {
+  background-color: var(--light-green-20);
+  border-left: 4px solid var(--dark-green-100);
+}
+div.tip > p::before {
+  color: var(--dark-green-100);
+  content: "Tip\A";
+}
+div.tip > p::after {
+  background-color: var(--dark-green);
+  mask-image: var(--lightbulb);
+}
+
+div.warning {
+  background-color: var(--light-yellow-20);
+  border-left: 4px solid var(--dark-yellow-100);
+}
+div.warning > p::before {
+  color: var(--dark-yellow-100);
+  content: "Warning\A";
+}
+div.warning > p::after {
+  background-color: var(--dark-yellow);
+  mask-image: var(--triangle-exclamation);
 }

@@ -1,0 +1,58 @@
+# How to use devicon in Next.js
+
+Devicon is a set of icons representing programming languages, design tools, and development tools.
+This guide explains how to use devicon in Next.js.
+
+:::seealso
+
+The detail of devicon is available at the official website.
+
+- [Devicon](https://devicon.dev)
+
+:::
+
+## Contents
+
+- [Install devicon package](#install-devicon-package)
+- [Usage](#usage)
+
+## Install devicon package
+
+First, install the devicon package with the following command.
+
+```sh
+npm install devicon
+```
+
+After installing the package, edit `app/global.css` file in the project root,
+and add the following line to import the devicon css file.
+
+```diff:app/global.css
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
++ @import "devicon/devicon.min.css";
+```
+
+## Usage
+
+You can use devicon as font icons in your Next.js project.
+For example, to use the Next.js icon, add the following code to your component.
+
+```tsx
+<i className="devicon-nextjs-original-wordmark colored"></i>
+```
+
+The output is as follows.
+
+<i className="devicon-nextjs-original-wordmark"></i>
+
+To change size, color, you can specify the class name as follows.
+
+```tsx
+<i className=" text-9xl text-accent-100 devicon-nextjs-original-wordmark colored"></i>
+```
+
+The output will be change as follows.
+
+<i className=" text-9xl text-accent-100 devicon-nextjs-original-wordmark"></i>

@@ -1,0 +1,487 @@
+# How to use markdown in Next.js
+
+Markdown is a lightweight markup language with plain text formatting syntax.
+
+[MDX](https://mdxjs.com) is a superset of Markdown
+that allows you to use JSX compornets in markdown files.
+
+This document describes how to use MDX in Next.js.
+
+:::seealso
+The following documents are related to this document.
+
+- [Markdown and MDX](https://nextjs.org/docs/pages/building-your-application/configuring/mdx)
+
+:::
+
+## Contents
+
+- [Setup](#setup)
+  - [Premise](#premise)
+  - [Install required packages to use MDX](#install-required-packages-to-use-mdx)
+  - [Add Style with tailwindcss typography](#add-style-with-tailwindcss-typography)
+  - [Add Style with remark-gfm](#add-style-with-remark-gfm)
+  - [Add Code Syntax Highlighting](#add-code-syntax-highlighting)
+  - [Add title to the code blocks with rehype-code-titles](#add-title-to-the-code-blocks-with-rehyp-code-titles)
+  - [Add directive with remark-directive](#add-directive-with-remark-directive)
+- [Usage](#usage)
+  - [Add MDX contents to a page](#add-mdx-contents-to-a-page)
+
+## Setup
+
+This section describes how to set up MDX in Next.js.
+
+### Premise
+
+This document assumes that you have already created a Next.js project.
+The project should have the following structure.
+
+```diff
+  PROJECT_ROOT
+  |- app/
+  |  |- components/
+  |  |- pages/
+  |  |- global.css
+  |  |- favicon.ico
+  |  |- layout.tsx
+  |  `- page.tsx
+  |- node_modules/
+  |- public/
+  |- .gitignore
+  |- .package-lock.json
+  |- package.json
+  |- tsconfig.json
+  |- README.md
+  |- eslint.config.mjs
+  |- postcss.config.mjs
+  |- next-env.d.ts
+  |- next.config.ts
+  `- tailwind.config.ts
+```
+
+### Install required packages to use MDX
+
+First, install the following packages that are required to use MDX.
+
+```sh
+npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
+```
+
+After installing the required packages, configure the `next.config.ts` file.
+Add the following code to the `next.config.ts` file.
+
+```diff:next.config.ts
+  import type { NextConfig } from "next";
++ import createMDX from "@next/mdx";
+
+  const nextConfig: NextConfig = {
+    /* config options here */
++   pageExtensions: ["md", "mdx", "ts", "tsx"],
+  };
+
++ const withMDX = createMDX({});
+
+- export default nextConfig;
++ export default withMDX(nextConfig);
+```
+
+Create an `mdx-components.tsx` file in the project root.
+
+```diff
+  PROJECT_ROOT
+  |- ...
++ `- mdx-components.tsx
+```
+
+```ts:mdx-components.tsx
+import type { MDXComponents } from "mdx/types";
+
+export function useMDXComponents(components: MDXComponents): MDXComponents {
+  return {
+    ...components,
+  };
+}
+```
+
+:::note
+After of the above steps, you can use MDX in your Next.js project.
+But no styles are applied to the markdown content yet.
+I recommend you to add styles with the following sections.
+:::
+
+### Add Style with tailwindcss typography
+
+```sh
+npm install -D @tailwindcss/typography
+```
+
+Edit `tailwind.config.ts` in the project root,
+and add the following code that imports the `typography` plugin.
+
+```diff:tailwind.config.ts
+  import type { Config } from "tailwindcss";
++ import typography from "@tailwindcss/typography";
+
+  export default {
+    content: [
+      "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    theme: {
+      extend: {
+        colors: {
+          ...
+        },
+      },
+    },
+-   plugins: [],
++   plugins: [typography],
+  } satisfies Config;
+```
+
+Create a `MdxLayout.tsx` file in the `app/components` directory.
+The function `MdxLayout` is a wrapper component for the markdown content
+that applies styles with the tailwindcss typography.
+
+```diff
+  PROJECT_ROOT
+  |- app/
+  |  |- components/
+  |  |  |- ...
++ |  |  `- MdxLayout.tsx
+  |  `- .../
+  `- ...
+```
+
+```tsx:app/components/MdxLayout.tsx
+export default function MdxLayout({ children }: { children: React.ReactNode }) {
+  const classStr = [
+    "w-full",
+    "max-w-none",
+    "prose",
+    "prose-headings:mt-8",
+    "prose-headings:font-semibold",
+    "prose-headings:text-black",
+    "prose-h1:text-5xl",
+    "prose-h2:text-4xl",
+    "prose-h3:text-3xl",
+    "prose-h4:text-2xl",
+    "prose-h5:text-xl",
+    "prose-h6:text-lg",
+    "dark:prose-headings:text-black",
+  ].join(" ");
+  // Create any shared layout or styles here
+  return <div className={classStr}>{children}</div>;
+}
+```
+
+### Add Style with remark-gfm
+
+The `remark-gfm` is a plugin that support for
+[GFM (GitHub Flavored Markdown)](https://github.github.com/gfm/) in remark.
+GFM contains some features such as autolink literals, footnotes,
+strikethrough, tables, tasklists.
+
+Install `remark-gfm` package with the following command.
+
+```sh
+npm install remark-gfm
+```
+
+Edit `next.config.ts` in the project root, and add the following code.
+
+```diff:next.config.ts
++ import remarkGfm from "remark-gfm";
+  import type { NextConfig } from "next";
+  import createMDX from "@next/mdx";
+
+
+- const withMDX = createMDX({});
++ const withMDX = createMDX({
++   options: {
++     remarkPlugins: [remarkGfm],
++     rehypePlugins: [],
++   },
++ });
+```
+
+### Add Code Syntax Highlighting
+
+The `rehype-hilight` is a plugin that highlights code blocks in markdown content.
+
+Install `rehype-hilight` package with the following command.
+
+```sh
+npm install rehype-hilight
+```
+
+Edit `next.config.ts` in the project root.
+
+```diff:next.config.ts
+  import remarkGfm from "remark-gfm";
++ import rehypeHighlight from "rehype-highlight";
+
+  const withMDX = createMDX({
+    options: {
+-     rehypePlugins: [],
++     rehypePlugins: [rehypeHighlight],
+    },
+  });
+
+```
+
+Add the import sentense to the `app/global.css` file.
+
+```diff:app/global.css
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
++ @import "highlight.js/styles/monokai-sublime.css";
+```
+
+:::tip
+Your can change the code highlighting style by changing the imported CSS file.
+Highlighting style examples are [here](https://highlightjs.org/examples).
+:::
+
+### Add title to the code blocks with rehype-code-titles
+
+The `rehype-code-titles` is a plugin that adds titles to code blocks in markdown content.
+
+Install `rehype-code-titles` package with the following command.
+
+```sh
+npm install rehype-code-titles
+```
+
+Edit `next.config.ts` in the project root.
+
+```diff:next.config.ts
+  import rehypeHighlight from "rehype-highlight";
++ import rehypeCodeTitles from "rehype-code-titles";
+
+  const withMDX = createMDX({
+    options: {
+      remarkPlugins: [remarkGfm, remarkDirective, admonitionRemarkPlugin],
+-     rehypePlugins: [rehypeHighlight],
++     rehypePlugins: [rehypeCodeTitles, rehypeHighlight],
+    },
+  });
+```
+
+:::caution
+You need to add the `rehypeCodeTitles` before the `rehypeHighlight`.
+:::
+
+### Add directive with remark-directive
+
+The `remark-directive` is a plugin that supports directives to markdown content.
+In this section, I will show yout how to add a directive of the admonitions.
+
+```sh
+npm install remark-directive
+```
+
+Create a `admonitionRemarkPlugin.ts` file in the `app/plugins` directory.
+
+```diff
+  PROJECT_ROOT
+  |- app/
+  |  |- plugins/
++ |  |  `- admonitionRemarkPlugin.ts
+  |  `- ...
+  `- ...
+```
+
+```ts:app/plugins/admonitionRemarkPlugin.ts
+import { visit } from "unist-util-visit";
+
+export const admonitionRemarkPlugin = () => {
+  /**
+   * @param {import('mdast').Root} tree
+   *   Tree.
+   * @returns {undefined}
+   *   Nothing.
+   */
+  const admonitions = [
+    "attention",
+    "caution",
+    "danger",
+    "error",
+    "hint",
+    "important",
+    "note",
+    "tip",
+    "seealso",
+    "warning",
+  ];
+  return (tree: import("mdast").Root) => {
+    visit(tree, (node) => {
+      if (
+        node.type === "containerDirective" ||
+        node.type === "leafDirective" ||
+        node.type === "textDirective"
+      ) {
+        if (!admonitions.includes(node.name)) return;
+        const data = node.data || (node.data = {});
+        const tagName = node.type === "textDirective" ? "span" : "div";
+        data.hName = tagName;
+        data.hProperties = { class: `admonition ${node.name}` };
+      }
+    });
+  };
+};
+```
+
+Then, add the styles of the admonitions to the `app/global.css` file.
+
+```css:app/global.css(fragment)
+.prose div > p {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+.prose code::before {
+  content: "";
+}
+.prose code::after {
+  content: "";
+}
+.prose h3 > code {
+  background-color: var(--primary-gray-20);
+  color: var(--middle-blue-100);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.prose p > code {
+  background-color: var(--primary-gray-20);
+  color: var(--middle-blue-100);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.prose div.admonition > ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+div.admonition {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+div.admonition p {
+  position: relative;
+}
+div.admonition > p::before {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  padding-left: 1.5rem;
+  white-space: pre;
+}
+div.admonition > p::after {
+  position: absolute;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1.125rem;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  top: 0.25rem;
+  left: 0rem;
+  content: " ";
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+div.attention {
+  background-color: var(--light-yellow-20);
+  border-left: 4px solid var(--dark-yellow-100);
+}
+div.attention > p::before {
+  color: var(--dark-yellow-100);
+  content: "Attention\A";
+}
+div.attention > p::after {
+  background-color: var(--dark-yellow);
+  mask-image: var(--circle-exclamation);
+}
+```
+
+## Usage
+
+### Add MDX contents to a page
+
+First, create an `mdx` file in a subdirectory of the project.
+I reccomend you to create it in the subdirectory of the `app/pages`.
+
+```diff
+PROJECT_ROOT
+|- app/
+|  |- pages/
+|  |  |- your-page
++ |  |  |  |- example.mdx
+|  |  `- ...
+|  `- ...
+`- ...
+```
+
+```md:app/pages/your-page/example.mdx
+# Example page
+
+## Subject
+
+This is an example page.
+```
+
+Second, create a page component file `page.tsx`
+in the the subdirectory of the `app/pages`.
+
+```diff
+  PROJECT_ROOT
+  |- app/
+  |  |- pages/
+  |  |  |- your-page
+  |  |  |  |- example.mdx
++ |  |  |  `- page.tsx
+  |  |  `- ...
+  |  `- ...
+  `- ...
+```
+
+In the `page.tsx`, import the MDX componet from the mdx file that you created,
+and use it in the JSX code.
+
+```tsx:app/pages/your-page/page.tsx
+"use client";
+import YourMdx from "./example.mdx";
+
+const YourMdxPage = () => {
+  return (
+      <YourMdx />
+  );
+};
+export default YourMdxPage;
+```
+
+:::tip
+You can name the MDX component that is imported from the MDX file as your like.
+:::
+
+With tailwindcss typography, wrap the MDX component with the `MdxLayout` component.
+
+```tsx:app/pages/your-page/page.tsx
+"use client";
+import YourMdx from "./example.mdx";
+import MdxLayout from "@/app/components/MdxLayout";
+
+const YourMdxPage = () => {
+  return (
+    <MdxLayout>
+      <YourMdx />
+    </MdxLayout>
+  );
+};
+export default YourMdxPage;
+```
