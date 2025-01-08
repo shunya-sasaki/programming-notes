@@ -31,7 +31,7 @@ const TsPage = () => {
           </div>
         ))}
       </section>
-      <section className="w-full h-5/6 lg:w-3/4 pr-4 overflow-y-scroll">
+      <section className="w-full lg:w-3/4 h-5/6 lg:h-full pr-4 overflow-y-scroll">
         <h1 className="my-4 text-3xl font-bold flex content-center space-x-2">
           <div>
             <i className="devicon-typescript-plain align-middle"></i>
