@@ -37,7 +37,7 @@ export default function RootLayout({
           </header>
           <div className="h-[92.5%] min-h-[92.5%] z-0">
             <div className="flex h-full">
-              <div className="w-[10.0%] h-full border-r-2">
+              <div className="min-w-9 w-[5.0%] overflow-x-hidden lg:w-[10.0%] h-full border-r-2">
                 <SideBar />
               </div>
               <main className="w-[90%] h-full mx-4">{children}</main>

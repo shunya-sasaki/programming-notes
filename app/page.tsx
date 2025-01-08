@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <div>
       <h1 className="text-3xl font-bold my-4">Languages</h1>
-      <section className="grid grid-cols-2 gap-4 px-4">
+      <section className="lg:grid grid-cols-2 gap-4 px-4">
         {languages.map((language) => (
           <div key={language.pageRef} className="text-3xl py-2">
             <Link

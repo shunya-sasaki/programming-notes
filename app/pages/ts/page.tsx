@@ -17,8 +17,21 @@ const TsPage = () => {
   }, [currentPage]);
 
   return (
-    <div className="flex h-full overflow-y-hidden pb-4">
-      <section className="w-3/4 pr-4 overflow-y-scroll">
+    <div className="lg:flex lg:flex-row-reverse h-full overflow-y-hidden pb-4">
+      <section className="w-full h-1/6 lg:h-full lg:w-1/4 lg:pl-4 mb-2 lg:border-0 border-b-2 lg:border-b-0 lg:border-l-2 border-primary-100 ">
+        <h2 className="text-xl font-bold">Pages</h2>
+        {pages.map((page) => (
+          <div
+            key={page.ref}
+            className="flex items-start lg:items-center space-x-2 hover:cursor-pointer hover:text-accent-100"
+            onClick={() => setCurrentPage(page)}
+          >
+            <FontAwesomeIcon icon={faFileLines} className="py-1" />
+            <div className="align-top lg:align-middle">{page.title}</div>
+          </div>
+        ))}
+      </section>
+      <section className="w-full h-5/6 lg:w-3/4 pr-4 overflow-y-scroll">
         <h1 className="my-4 text-3xl font-bold flex content-center space-x-2">
           <div>
             <i className="devicon-typescript-plain align-middle"></i>
@@ -26,19 +39,6 @@ const TsPage = () => {
           <div className="align-middle">TypeScript</div>
         </h1>
         <MdxLayout>{currentPageJsx}</MdxLayout>
-      </section>
-      <section className="w-1/4 pl-4 border-l-2 border-primary-100 ">
-        <h2 className="text-xl font-bold">Contents</h2>
-        {pages.map((page) => (
-          <div
-            key={page.ref}
-            className="flex items-center space-x-2 hover:cursor-pointer hover:text-accent-100"
-            onClick={() => setCurrentPage(page)}
-          >
-            <FontAwesomeIcon icon={faFileLines} />
-            <div>{page.title}</div>
-          </div>
-        ))}
       </section>
     </div>
   );
