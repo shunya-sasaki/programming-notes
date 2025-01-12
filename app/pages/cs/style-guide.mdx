@@ -1,0 +1,61 @@
+# C# Style Guide
+
+This document provides a style guide for C#.
+
+:::seealso
+
+Refer to the following page for more information:
+
+- [Common C# code conventins](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+- [C# at Google Style Guide](https://google.github.io/styleguide/csharp-style.html)
+
+:::
+
+## Contents
+
+- [Naming rules](#naming-rules)
+  - [Format methods](#format-methods)
+  - [Formats for C++ programs](#formats-for-c-programs)
+
+## Naming rules
+
+### Format methods
+
+The following are format methods commonly used in programming:
+
+- snake_case
+- kebab-case
+- MACRO_CASE (SCREAMING_SNAKE_CASE)
+- camelCalse
+- PascalCase (UpperCamelCase)
+
+### Formats for C# programs
+
+| Item                            | Method      | Example          |
+| ------------------------------- | ----------- | ---------------- |
+| Namespaces                      | PascalCase  | `MyNamespace`    |
+| Classes / Types                 | PascalCase  | `MyClass`        |
+| Interfaces                      | IPascalCase | `ISomeInterface` |
+| Methods                         | PascalCase  | `MyMethod`       |
+| Properties                      | PascalCase  | `SomeValue`      |
+| Properties (private, protected) | PascalCase  | `_SomeValue`     |
+| Events                          | PascalCase  | `OnEvent`        |
+| Fields                          | PascalCase  | `SomeValue`      |
+| Enums                           | PascalCase  | `Ok`             |
+| Parameter                       | PascalCase  | `someValue`      |
+
+### Order of class values
+
+- Nested classes, enums, delgates, events
+- Static, const, readonly fields
+- Filed and properties
+- Constructor, destructor
+- Methods
+
+### Order of elements
+
+- Public
+- Internal
+- Protected internal
+- Protected
+- Internal

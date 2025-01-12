@@ -5,8 +5,8 @@ interface PageIndexes {
 }
 
 export const pageIndex: PageIndexes = {
-  cpp: [{ title: "File and directory structure for CMake", href: "cmake" }],
-  cs: [{ title: "Style guide for C# project", href: "style-guide" }],
+  cpp: [{ title: "C++ Style Guide", href: "style-guide" }],
+  cs: [{ title: "C# Style Guide", href: "style-guide" }],
   python: [
     {
       title: "Sphinx with markdown",

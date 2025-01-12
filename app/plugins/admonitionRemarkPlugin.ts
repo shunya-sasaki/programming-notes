@@ -41,7 +41,6 @@ export const admonitionRemarkPlugin = () => {
 
         data.hName = tagName;
         data.hProperties = { class: `admonition ${node.name}` };
-        console.log("Node processed:", node);
       }
     });
   };
