@@ -4,7 +4,7 @@ This project contains notes on various programming topics.
 
 ## Resources
 
-The build artifacts are hosted on [GitHub Pages](https://shunya-sasaki.github.io/programming-note/).
+The build artifacts are hosted on [GitHub Pages](https://shunya-sasaki.github.io/programming-notes/).
 
 ## Author
 
