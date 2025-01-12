@@ -7,7 +7,27 @@ import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 const HomePage = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold my-4">Languages</h1>
+      <h1 className="text-5xl font-bold my-4">Programming Notes</h1>
+      <section className="px-4">
+        <p>
+          This document is a collection of notes on various programming
+          languages, tools, and technologies.
+        </p>
+        <p>
+          The notes are intended to be a quick reference for myself and others.
+        </p>
+        <p>
+          You can find the source code for this document on&nbsp;
+          <Link
+            className=" text-middle-blue-100 hover:text-light-blue-100"
+            href="https://github.com/shunya-sasaki/programming-notes"
+          >
+            GitHub
+          </Link>
+          .
+        </p>
+      </section>
+      <h2 className="text-3xl font-bold my-4">Languages</h2>
       <section className="lg:grid grid-cols-2 gap-4 px-4">
         {languages.map((language) => (
           <div key={language.pageRef} className="text-3xl py-2">

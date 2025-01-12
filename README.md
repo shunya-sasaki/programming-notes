@@ -1,4 +1,4 @@
-# Programming Note
+# Programming Notes
 
 This project contains notes on various programming topics.
 

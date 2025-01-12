@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Programming Note",
-  description: "Private Note for Programming",
+  title: "Programming Notes",
+  description: "Private Notes for Programming",
 };
 
 export default function RootLayout({
