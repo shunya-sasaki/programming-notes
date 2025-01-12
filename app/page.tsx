@@ -12,7 +12,10 @@ const HomePage = () => {
         {languages.map((language) => (
           <div key={language.pageRef} className="text-3xl py-2">
             <Link
-              href={`/pages/${language.pageRef}`}
+              href={`/pages/${language.pageRef}/${
+                pageIndex[language.pageRef][0].href
+              }
+              `}
               className="hover:text-accent-100"
             >
               <div className="flex items-center space-x-2">
@@ -23,8 +26,8 @@ const HomePage = () => {
             <div className="p-2 text-base ">
               {pageIndex[language.pageRef].map((page: PageIndex) => (
                 <Link
-                  href={`/pages/${page.ref}`}
-                  key={page.ref}
+                  href={`/pages/${language.pageRef}/${page.href}`}
+                  key={page.href}
                   className="flex items-center space-x-2 hover:text-accent-100"
                 >
                   <FontAwesomeIcon icon={faFileLines} />

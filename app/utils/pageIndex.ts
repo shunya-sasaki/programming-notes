@@ -5,22 +5,22 @@ interface PageIndexes {
 }
 
 export const pageIndex: PageIndexes = {
-  cpp: [],
-  cs: [],
+  cpp: [{ title: "File and directory structure for CMake", href: "cmake" }],
+  cs: [{ title: "Style guide for C# project", href: "style-guide" }],
   python: [
     {
       title: "Sphinx with markdown",
-      ref: "python/sphinx-markdown",
+      href: "sphinx-markdown",
     },
   ],
   ts: [
     {
       title: "How to use markdown in Next.js",
-      ref: "ts/mdx",
+      href: "mdx",
     },
     {
       title: "How to use devicon in Next.js",
-      ref: "ts/devicon",
+      href: "devicon",
     },
   ],
 };

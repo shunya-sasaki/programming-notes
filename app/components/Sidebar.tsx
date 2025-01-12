@@ -3,6 +3,7 @@ import Link from "next/link";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { languages } from "@/app/utils/languages";
+import { pageIndex } from "../utils/pageIndex";
 
 export const SideBar = () => {
   const iconClass =
@@ -16,7 +17,9 @@ export const SideBar = () => {
       {languages.map((language) => (
         <div key={language.pageRef} className={iconClass}>
           <Link
-            href={`/pages/${language.pageRef}`}
+            href={`/pages/${language.pageRef}/${
+              pageIndex[language.pageRef][0].href
+            }`}
             className="hover:text-accent-100"
           >
             <div className="flex items-center space-x-2 text-xl">
