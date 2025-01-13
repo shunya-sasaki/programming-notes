@@ -11,9 +11,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  basePath: process.env.NODE_ENV === "development" ? "" : "/programming-note",
+  basePath: process.env.NODE_ENV === "development" ? "" : "/programming-notes",
   assetPrefix:
-    process.env.NODE_ENV === "development" ? "" : "/programming-note",
+    process.env.NODE_ENV === "development" ? "" : "/programming-notes",
 };
 
 const withMDX = createMDX({
