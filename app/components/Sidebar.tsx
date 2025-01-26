@@ -4,6 +4,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { languages } from "@/app/utils/languages";
 import { pageIndex } from "../utils/pageIndex";
+import { tools } from "@/app/utils/tools";
 
 export const SideBar = () => {
   const iconClass =
@@ -28,6 +29,18 @@ export const SideBar = () => {
             </div>
           </Link>
         </div>
+      ))}
+      {tools.map((tool, index) => (
+        <Link
+          key={`tools-${index}`}
+          href={`/pages/tools/${tool.pages[0].href}`}
+          className={iconClass}
+        >
+          <div className="flex items-center space-x-2 text-xl">
+            <i className={`${tool.iconName} align-middle`}></i>
+            <div className=" align-middle">{tool.name}</div>
+          </div>
+        </Link>
       ))}
     </div>
   );

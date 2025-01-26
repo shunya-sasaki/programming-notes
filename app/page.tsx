@@ -4,6 +4,7 @@ import Link from "next/link";
 import { pageIndex } from "./utils/pageIndex";
 import { PageIndex } from "./interfaces/PageIndex";
 import { faFileLines } from "@fortawesome/free-solid-svg-icons";
+import { tools } from "./utils/tools";
 const HomePage = () => {
   return (
     <div>
@@ -57,6 +58,34 @@ const HomePage = () => {
             </div>
           </div>
         ))}
+      </section>
+      <section>
+        <h2 className="text-3xl font-bold my-4">Tools</h2>
+        <div className="lg:grid grid-cols-2 gap-4 px-4">
+          {tools.map((tool, index) => (
+            <div key={`tool-${index}`}>
+              <Link
+                href={`pages/tools/${tools[0].pages[0].href}`}
+                className="hover:text-accent-100"
+              >
+                <div className="flex items-center space-x-2 text-3xl">
+                  <i className={`${tool.iconName} align-middle`}></i>
+                  <div className=" align-middle">{tool.name}</div>
+                </div>
+              </Link>
+              {tool.pages.map((page) => (
+                <Link
+                  href={`/pages/tools/${page.href}`}
+                  key={`tools-${page.href}`}
+                  className="p-2 flex items-center space-x-2 hover:text-accent-100"
+                >
+                  <FontAwesomeIcon icon={faFileLines} />
+                  <div>{page.title}</div>
+                </Link>
+              ))}
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

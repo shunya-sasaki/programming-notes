@@ -1,0 +1,62 @@
+# Git hooks
+
+## What are Git hooks?
+
+- Git hooks are scripts that Git executes before or after events such as commit, push, and receive.
+- They allow you to automate tasks and enforce policies in your Git workflow.
+- Here are some key points about Git hooks:
+  - `pre-commit`: Runs before a commit is made. Useful for checking code style or running tests.
+  - `commit-msg`: Runs after the commit message is entered. Can be used to validate the commit message format.
+  - `pre-push`: Runs before a push operation. Can be used to run tests or checks before pushing code to a remote repository.
+
+## Add hooks
+
+Create `.githooks` directory in the project root.
+
+```sh
+mkdir .githooks
+```
+
+Run the following command to add `.githooks` directory to hooksPath.
+
+```sh
+git config core.hooksPath .githooks
+```
+
+:::note
+The configuration for `hooksPath` is not stored in the Git repository.
+Each project member needs to run the configuration command individually.
+:::
+
+Create a hook file in the `.githooks` directory. For example, to create a pre-commit hook, add a file `.githooks/pre-commit`.
+
+You can write hook files using Bash, Ruby, or Python. Below is an example of a pre-push hook written in Bash.
+
+```bash
+#!/usr/bin/env bash
+# pre-push
+echo "Running pre-push hook"
+
+while read local_ref local_sha remote_ref remote_sha; do
+    branch_name=$(echo "$local_ref" | sed 's/refs\/heads\///')
+done
+
+if [ "$branch_name" = "main" ]; then
+    echo "Pushing to main branch with normal push is not allowed!" >&2
+    echo "Please use the command \`npm run release\` to push changes!!" >&2
+    exit 1
+elif [ "$branch_name" = "" ]; then
+    echo "No changes pushed"
+else
+    echo "branch_name is not main"
+fi
+exit 0
+```
+
+If you use python, add `#!/usr/bin env python3` or `#!/ust/bin/env python` to the hook file as the following.
+
+```python
+#!/usr/bin/env bash
+# pre-push
+print("Running pre-push hook")
+```

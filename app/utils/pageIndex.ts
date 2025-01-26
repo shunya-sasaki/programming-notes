@@ -23,4 +23,5 @@ export const pageIndex: PageIndexes = {
       href: "devicon",
     },
   ],
+  tools: [{ title: "Git hooks", href: "git-hooks" }],
 };
