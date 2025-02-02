@@ -1,0 +1,94 @@
+# Project structure
+
+:::seealso
+
+This documents references the following page.
+
+- [Next.js, "Project structure and organization"](https://nextjs.org/docs/app/getting-started/project-structure)
+
+:::
+
+## Layouts
+
+<table>
+  <thead>
+    <tr>
+      <th>Layout</th>
+      <th>Pros</th>
+      <th>Cons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowSpan="2">Store project files outside of app</td>
+      <td>Clear separaition between core application code and ancillary files</td>
+      <td>Can complicate module imports and references</td>
+    </tr>
+    <tr>
+      <td>Reduce clutter inside app folder</td>
+      <td>Less intuitive grouping</td>
+    </tr>
+    <tr>
+      <td rowSpan="2">Store project files in top-level folders in side of app</td>
+      <td>Kepps all related code in one loacation</td>
+      <td>App floder may get cluttered</td>
+    </tr>
+    <tr>
+      <td>Simpicity in routing and file discovery</td>
+      <td>Colud beceom harder to scale as app grows</td>
+    </tr>
+    <tr>
+      <td rowSpan="2">Split project files by feature or route</td>
+      <td>Encourages feature encapsulation</td>
+      <td>Require more initial plannning</td>
+    </tr>
+    <tr>
+      <td>Promotes maintainability and separation of concerns</td>
+      <td>May lead to duplicate shared logic if not managed properly</td>
+    </tr>
+  </tbody>
+</table>
+
+### Store project files outside of app
+
+```diff
+PROJECT
+|- app/
+|  |- dashboard/
+|  |  `- page.tsx
+|  `- page.tsx
+|- components/
+|- lib/
+|- ...
+`- package.json
+```
+
+### Store project files in top-level folders inside of app
+
+```diff
+PROJECT
+|- app/
+|  |- dashboard/
+|  |  `- page.tsx
+|  |- page.tsx
+|  |- components/
+|  |- lib/
+|- ...
+`- package.json
+```
+
+### Split project files by feature or route
+
+```diff
+PROJECT
+|- app/
+|  |- components/
+|  |- lib/
+|  |- dashboard/
+|  |  |- components/
+|  |  |- lib/
+|  |  `- page.tsx
+|  |- page.tsx
+|- ...
+`- package.json
+```

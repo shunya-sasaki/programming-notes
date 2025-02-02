@@ -173,6 +173,10 @@ body {
   margin-bottom: 0rem;
 }
 
+.prose td {
+  padding-inline-start: 0rem;
+}
+
 div.admonition {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;

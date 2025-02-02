@@ -22,6 +22,10 @@ export const pageIndex: PageIndexes = {
       title: "How to use devicon in Next.js",
       href: "devicon",
     },
+    {
+      title: "Project structure for Next.js",
+      href: "structure",
+    },
   ],
   tools: [{ title: "Git hooks", href: "git-hooks" }],
 };
