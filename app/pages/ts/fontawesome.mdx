@@ -1,0 +1,46 @@
+# Font Awesome in Next.js
+
+## Setup
+
+### Font Awesome as React components
+
+Install the following packages.
+
+```sh
+npm i --save @fortawesome/fontawesome-svg-core
+npm i --save @fortawesome/free-solid-svg-icons
+npm i --save @fortawesome/free-regular-svg-icons
+npm i --save @fortawesome/free-brands-svg-icons
+npm i --save @fortawesome/react-fontawesome@latest
+```
+
+### Font Awesome as Icon font with css
+
+Install the following package.
+
+```sh
+npm install --save @fortawesome/fontawesome-free
+```
+
+Add the next sentence to the `global.css` in your app directory.
+
+```css
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+```
+
+## Usage
+
+### Use as React components
+
+```tsx
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+
+<FontAwesomeIcon icon={faUser}>
+```
+
+### Use as icon fonts
+
+```tsx
+<i className="fa-solid fa-user"></i>
+```

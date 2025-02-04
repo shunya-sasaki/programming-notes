@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import "highlight.js/styles/monokai-sublime.css";
 @import "devicon/devicon.min.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 
 :root {
   --background: #ffffff;

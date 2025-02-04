@@ -26,6 +26,14 @@ export const pageIndex: PageIndexes = {
       title: "Project structure for Next.js",
       href: "structure",
     },
+    {
+      title: "Mermaid.js on Next.js",
+      href: "mermaid",
+    },
+    {
+      title: "Font Awesome on Next.js",
+      href: "fontawesome",
+    },
   ],
   tools: [{ title: "Git hooks", href: "git-hooks" }],
 };

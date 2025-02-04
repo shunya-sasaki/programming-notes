@@ -2,6 +2,7 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import rehypeCodeTitles from "rehype-code-titles";
 import remarkDirective from "remark-directive";
+import rehypeMermaid from "rehype-mermaid";
 import { admonitionRemarkPlugin } from "@/app/plugins/admonitionRemarkPlugin";
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
@@ -19,7 +20,7 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm, remarkDirective, admonitionRemarkPlugin],
-    rehypePlugins: [rehypeCodeTitles, rehypeHighlight],
+    rehypePlugins: [rehypeCodeTitles, rehypeHighlight, rehypeMermaid],
   },
 });
 
