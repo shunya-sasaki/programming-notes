@@ -1,5 +1,5 @@
-import { pageIndex } from "@/utils/pageIndex";
-import { PageContents } from "@/components/PageContentsSection";
+import { PageContents } from '@/components/PageContentsSection';
+import { pageIndex } from '@/utils/pageIndex';
 
 export const generateStaticParams = async () => {
   const pages = pageIndex.ts.map((page) => page.href);

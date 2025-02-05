@@ -1,0 +1,30 @@
+# Prittier plugin
+
+## Prettier-plugin-sort-imports
+
+Begin by installing the `prettier-plugin-sort-imports` package using the command
+below:
+
+```sh
+npm install --save-dev @trivago/prettier-plugin-sort-imports
+```
+
+Create a new file named .prettierrc in your project's root directory and add the
+following configuration to specify your import order and enable the required
+plugin:
+
+```json
+{
+  "importOrder": [
+    "^@core/(.*)$",
+    "^@server/(.*)$",
+    "^@ui/(.*)$",
+    "^react/(.*)",
+    "^next/(.*)",
+    "<THIRD_PARTY_MODULES>",
+    "^@/(.*)$",
+    "^[./]"
+  ],
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
+}
+```

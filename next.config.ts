@@ -1,20 +1,20 @@
-import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
-import rehypeCodeTitles from "rehype-code-titles";
-import remarkDirective from "remark-directive";
-import rehypeMermaid from "rehype-mermaid";
-import { admonitionRemarkPlugin } from "@/plugins/admonitionRemarkPlugin";
-import type { NextConfig } from "next";
-import createMDX from "@next/mdx";
+import { admonitionRemarkPlugin } from '@/plugins/admonitionRemarkPlugin';
+import createMDX from '@next/mdx';
+import type { NextConfig } from 'next';
+import rehypeCodeTitles from 'rehype-code-titles';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeMermaid from 'rehype-mermaid';
+import remarkDirective from 'remark-directive';
+import remarkGfm from 'remark-gfm';
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   /* config options here */
-  output: "export",
-  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  basePath: process.env.NODE_ENV === "development" ? "" : "/programming-notes",
+  output: 'export',
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  basePath: process.env.NODE_ENV === 'development' ? '' : '/programming-notes',
   assetPrefix:
-    process.env.NODE_ENV === "development" ? "" : "/programming-notes",
+    process.env.NODE_ENV === 'development' ? '' : '/programming-notes',
 };
 
 const withMDX = createMDX({

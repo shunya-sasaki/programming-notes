@@ -1,9 +1,9 @@
-import { tools } from "@/utils/tools";
-import { PageContents } from "@/components/PageContentsSection";
-import { Page } from "@/utils/tools";
+import { PageContents } from '@/components/PageContentsSection';
+import { tools } from '@/utils/tools';
+import { Page } from '@/utils/tools';
 
 export const generateStaticParams = async () => {
-  const pareRef = "git";
+  const pareRef = 'git';
   let targetPages = Array<Page>();
   for (const tool of tools) {
     if (tool.pageRef === pareRef) {
