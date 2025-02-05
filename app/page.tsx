@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { languages } from "./utils/languages";
+import { languages } from "../utils/languages";
 import Link from "next/link";
-import { pageIndex } from "./utils/pageIndex";
-import { PageIndex } from "./interfaces/PageIndex";
+import { pageIndex } from "../utils/pageIndex";
+import { PageIndex } from "@/interfaces/PageIndex";
 import { faFileLines } from "@fortawesome/free-solid-svg-icons";
-import { tools } from "./utils/tools";
+import { tools } from "../utils/tools";
 const HomePage = () => {
   return (
     <div>

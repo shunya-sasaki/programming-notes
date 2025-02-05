@@ -1,4 +1,4 @@
-import { PageIndex } from "@/app/interfaces/PageIndex";
+import { PageIndex } from "@/interfaces/PageIndex";
 
 export interface Pages {
   [key: string]: {

@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { languages } from "@/app/utils/languages";
+import { languages } from "@/utils/languages";
 import { pageIndex } from "../utils/pageIndex";
-import { tools } from "@/app/utils/tools";
+import { tools } from "@/utils/tools";
 
 export const SideBar = () => {
   const iconClass =

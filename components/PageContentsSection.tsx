@@ -1,9 +1,9 @@
 "use client";
-import { PageIndex } from "@/app/interfaces/PageIndex";
+import { PageIndex } from "@/interfaces/PageIndex";
 import { useEffect } from "react";
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import { PagesSection } from "@/app/components/PagesSection";
+import { PagesSection } from "@/components/PagesSection";
 import MdxLayout from "./MdxLayout";
 import { JSX } from "react";
 

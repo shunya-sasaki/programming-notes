@@ -3,7 +3,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeCodeTitles from "rehype-code-titles";
 import remarkDirective from "remark-directive";
 import rehypeMermaid from "rehype-mermaid";
-import { admonitionRemarkPlugin } from "@/app/plugins/admonitionRemarkPlugin";
+import { admonitionRemarkPlugin } from "@/plugins/admonitionRemarkPlugin";
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 

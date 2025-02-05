@@ -1,6 +1,6 @@
-import { tools } from "@/app/utils/tools";
-import { PageContents } from "@/app/components/PageContentsSection";
-import { Page } from "@/app/utils/tools";
+import { tools } from "@/utils/tools";
+import { PageContents } from "@/components/PageContentsSection";
+import { Page } from "@/utils/tools";
 
 export const generateStaticParams = async () => {
   const pareRef = "git";
