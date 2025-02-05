@@ -14,6 +14,8 @@ export const pageIndex: PageIndexes = {
     },
   ],
   ts: [
+    { title: 'Project structure', href: 'structure' },
+    { title: 'Prettier plugin', href: 'prettier-sort' },
     {
       title: 'How to use markdown in Next.js',
       href: 'mdx',
