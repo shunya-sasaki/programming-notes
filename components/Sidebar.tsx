@@ -1,14 +1,16 @@
-"use client";
-import Link from "next/link";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { languages } from "@/utils/languages";
-import { pageIndex } from "../utils/pageIndex";
-import { tools } from "@/utils/tools";
+'use client';
+
+import Link from 'next/link';
+
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { languages } from '@/utils/languages';
+import { tools } from '@/utils/tools';
 
 export const SideBar = () => {
   const iconClass =
-    "mx-2 my-2 flex items-center space-x-2 content-center hover:text-accent-100";
+    'mx-2 my-2 flex items-center space-x-2 content-center hover:text-accent-100';
   return (
     <div>
       <Link key={`link-home`} href="/" className={iconClass}>
@@ -18,9 +20,8 @@ export const SideBar = () => {
       {languages.map((language) => (
         <div key={language.pageRef} className={iconClass}>
           <Link
-            href={`/pages/${language.pageRef}/${
-              pageIndex[language.pageRef][0].href
-            }`}
+            href={`/languages/${language.pageRef}/${language.pages[0].href}
+            `}
             className="hover:text-accent-100"
           >
             <div className="flex items-center space-x-2 text-xl">
@@ -33,7 +34,7 @@ export const SideBar = () => {
       {tools.map((tool, index) => (
         <Link
           key={`tools-${index}`}
-          href={`/pages/tools/${tool.pages[0].href}`}
+          href={`/tools/${tool.pageRef}/${tool.pages[0].href}`}
           className={iconClass}
         >
           <div className="flex items-center space-x-2 text-xl">

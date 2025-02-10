@@ -1,6 +1,8 @@
-"use client";
-import React, { useEffect } from "react";
-import mermaid from "mermaid";
+'use client';
+
+import React, { useEffect } from 'react';
+
+import mermaid from 'mermaid';
 
 export const MermaidChart = () => {
   mermaid.initialize({ startOnLoad: true });

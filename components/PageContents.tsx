@@ -1,26 +1,37 @@
-"use client";
-import { PageIndex } from "@/interfaces/PageIndex";
-import { useEffect } from "react";
-import { useState } from "react";
-import dynamic from "next/dynamic";
-import { PagesSection } from "@/components/PagesSection";
-import MdxLayout from "./MdxLayout";
-import { JSX } from "react";
+'use client';
+
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { JSX } from 'react';
+
+import dynamic from 'next/dynamic';
+
+import MdxLayout from '@/components/MdxLayout';
+import { PagesSection } from '@/components/PagesSection';
+import { Page } from '@/interfaces/Page';
 
 export const PageContents = (props: {
-  pages: Array<PageIndex>;
+  pages: Array<Page>;
   pageName: string;
-  language: string;
-  languageShortName: string;
+  catRef: string;
+  subCatRef: string;
+  subCategory: string;
   iconName: string;
 }) => {
-  const { pages, pageName, language, languageShortName, iconName } = props;
+  const {
+    pages,
+    pageName,
+    catRef: category,
+    subCategory,
+    subCatRef: subShortName,
+    iconName,
+  } = props;
   const [currentPage, setCurrentPage] = useState(pageName);
   const [currentPageJsx, setCurrentPageJsx] = useState<JSX.Element>(<></>);
 
   useEffect(() => {
     const NewPage = dynamic(
-      () => import(`@/app/pages/${languageShortName}/${currentPage}.mdx`)
+      () => import(`@/app/${category}/${subShortName}/${currentPage}.mdx`),
     );
     setCurrentPageJsx(<NewPage />);
   }, [currentPage, pageName]);
@@ -31,9 +42,9 @@ export const PageContents = (props: {
       <section className="w-full lg:w-3/4 h-5/6 lg:h-full pr-4 overflow-y-scroll">
         <h1 className="my-4 text-3xl font-bold flex content-center space-x-2">
           <div>
-            <i className={`devicon-${iconName}-plain align-middle`}></i>
+            <i className={`${iconName} align-middle`}></i>
           </div>
-          <div className="align-middle">{language}</div>
+          <div className="align-middle">{subCategory}</div>
         </h1>
         <MdxLayout>{currentPageJsx}</MdxLayout>
       </section>

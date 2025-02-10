@@ -1,11 +1,14 @@
-"use client";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileLines } from "@fortawesome/free-solid-svg-icons";
-import { PageIndex } from "../interfaces/PageIndex";
-import React from "react";
+'use client';
+
+import React from 'react';
+
+import { faFileLines } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { Page } from '@/interfaces/Page';
 
 export const PagesSection = (props: {
-  pages: Array<PageIndex>;
+  pages: Array<Page>;
   setCurrentPage: React.Dispatch<string>;
 }) => {
   const { pages, setCurrentPage } = props;

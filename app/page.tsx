@@ -3,11 +3,8 @@ import Link from 'next/link';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { PageIndex } from '@/interfaces/PageIndex';
 import { languages } from '@/utils/languages';
-import { pageIndex } from '@/utils/pageIndex';
-
-import { tools } from '../utils/tools';
+import { tools } from '@/utils/tools';
 
 const HomePage = () => {
   return (
@@ -35,11 +32,9 @@ const HomePage = () => {
       <h2 className="text-3xl font-bold my-4">Languages</h2>
       <section className="lg:grid grid-cols-2 gap-4 px-4">
         {languages.map((language) => (
-          <div key={language.pageRef} className="text-3xl py-2">
+          <div key={`lang-${language.pageRef}-first`} className="text-3xl py-2">
             <Link
-              href={`/pages/${language.pageRef}/${
-                pageIndex[language.pageRef][0].href
-              }
+              href={`/languages/${language.pageRef}/${language.pages[0].href}
               `}
               className="hover:text-accent-100"
             >
@@ -49,9 +44,9 @@ const HomePage = () => {
               </div>
             </Link>
             <div className="p-2 text-base ">
-              {pageIndex[language.pageRef].map((page: PageIndex) => (
+              {language.pages.map((page) => (
                 <Link
-                  href={`/pages/${language.pageRef}/${page.href}`}
+                  href={`/languages/${language.pageRef}/${page.href}`}
                   key={page.href}
                   className="flex items-center space-x-2 hover:text-accent-100"
                 >
@@ -67,9 +62,9 @@ const HomePage = () => {
         <h2 className="text-3xl font-bold my-4">Tools</h2>
         <div className="lg:grid grid-cols-2 gap-4 px-4">
           {tools.map((tool, index) => (
-            <div key={`tool-${index}`}>
+            <div key={`tool-${index}-first`}>
               <Link
-                href={`pages/tools/${tools[0].pages[0].href}`}
+                href={`/tools/${tool.pages[0].href}`}
                 className="hover:text-accent-100"
               >
                 <div className="flex items-center space-x-2 text-3xl">
@@ -79,7 +74,7 @@ const HomePage = () => {
               </Link>
               {tool.pages.map((page) => (
                 <Link
-                  href={`/pages/tools/${page.href}`}
+                  href={`/tools/${page.href}`}
                   key={`tools-${page.href}`}
                   className="p-2 flex items-center space-x-2 hover:text-accent-100"
                 >

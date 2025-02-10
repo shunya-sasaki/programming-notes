@@ -1,4 +1,4 @@
-export interface PageIndex {
+export interface Page {
   title: string;
   href: string;
 }
