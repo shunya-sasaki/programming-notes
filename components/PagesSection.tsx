@@ -13,7 +13,7 @@ export const PagesSection = (props: {
 }) => {
   const { pages, setCurrentPage } = props;
   return (
-    <section className="w-full h-1/6 lg:h-full lg:w-1/4 lg:pl-4 mb-2 lg:border-0 border-b-2 lg:border-b-0 lg:border-l-2 border-primary-100 ">
+    <section className="w-full h-1/6 lg:h-full overflow-y-scroll lg:w-1/4 lg:pl-4 mb-2 lg:border-0 border-b-2 lg:border-b-0 lg:border-l-2 border-primary-100 ">
       <h2 className="text-xl font-bold">Pages</h2>
       {pages.map((page) => (
         <div
