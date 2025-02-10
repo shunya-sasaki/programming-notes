@@ -41,6 +41,10 @@ export const languages: Array<Category> = [
         title: 'Font Awesome on Next.js',
         href: 'fontawesome',
       },
+      {
+        title: 'Logger with pino',
+        href: 'logger-with-pino',
+      },
     ],
   },
   {
