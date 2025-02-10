@@ -26,7 +26,9 @@ export const SideBar = () => {
           >
             <div className="flex items-center space-x-2 text-xl">
               <i className={`${language.iconName} align-middle`}></i>
-              <div className=" align-middle">{language.name}</div>
+              <div className=" invisible lg:visible align-middle">
+                {language.name}
+              </div>
             </div>
           </Link>
         </div>
