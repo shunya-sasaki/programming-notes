@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { SideBar } from '@/components/Sidebar';
+import { logger } from '@/utils/logger';
 
 import './globals.css';
 
@@ -28,6 +29,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  logger.info('Rendering Root Layout');
   return (
     <html lang="en">
       <body

@@ -1,0 +1,75 @@
+# Logger with Pino
+
+## Setup
+
+```sh
+npm install pino pino-pretty
+```
+
+Edit `next.config.ts` in the project root, and add the option of
+`serverExternalPackages` as below.
+
+```diff
+  const nextConfig: NextConfig = {
+    output: 'export',
++   serverExternalPackages: ['pino']
+    ...
+  }
+```
+
+Create a file named `logger.ts` in an appropriate project location and insert
+the following content:
+
+```ts
+import pino from 'pino';
+
+export const logger = pino({
+  transport: {
+    targets: [
+      {
+        target: 'pino-pretty',
+        options: {
+          colorize: true,
+        },
+      },
+    ],
+  },
+});
+```
+
+To log messages to a file, include a configuration block with a target of
+"pino/file", which specifies the destination of your log file:
+
+```ts
+import pino from 'pino';
+
+export const logger = pino({
+  transport: {
+    targets: [
+      {
+        target: 'pino/file',
+        options: {
+          destination: 'log/app.log',
+        },
+      },
+      {
+        target: 'pino-pretty',
+        options: {
+          colorize: true,
+        },
+      },
+    ],
+  },
+});
+```
+
+## Usage
+
+To use logger, import the `logger` variable from the `logger.ts` that you
+created.
+
+```ts
+import { logger } from '@/util/logger';
+
+logger.info('Info level message.');
+```

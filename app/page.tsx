@@ -4,9 +4,11 @@ import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { languages } from '@/utils/languages';
+import { logger } from '@/utils/logger';
 import { tools } from '@/utils/tools';
 
 const HomePage = () => {
+  logger.info('Rendering Home Page');
   return (
     <div>
       <h1 className="text-5xl font-bold my-4">Programming Notes</h1>
