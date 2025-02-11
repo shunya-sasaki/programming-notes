@@ -10,7 +10,7 @@ import { tools } from '@/utils/tools';
 const HomePage = () => {
   logger.info('Rendering Home Page');
   return (
-    <div>
+    <div className="w-full h-full overflow-y-scroll">
       <h1 className="text-5xl font-bold my-4">Programming Notes</h1>
       <section className="px-4">
         <p>
