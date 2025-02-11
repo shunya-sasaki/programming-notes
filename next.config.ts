@@ -1,8 +1,10 @@
 import createMDX from '@next/mdx';
 import type { NextConfig } from 'next';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeMermaid from 'rehype-mermaid';
+import rehypeSlug from 'rehype-slug';
 import remarkDirective from 'remark-directive';
 import remarkGfm from 'remark-gfm';
 
@@ -22,7 +24,13 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm, remarkDirective, admonitionRemarkPlugin],
-    rehypePlugins: [rehypeCodeTitles, rehypeHighlight, rehypeMermaid],
+    rehypePlugins: [
+      rehypeCodeTitles,
+      rehypeHighlight,
+      rehypeMermaid,
+      rehypeAutolinkHeadings,
+      rehypeSlug,
+    ],
   },
 });
 

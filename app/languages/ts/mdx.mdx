@@ -16,16 +16,19 @@ The following documents are related to this document.
 
 ## Contents
 
-- [Setup](#setup)
-  - [Premise](#premise)
-  - [Install required packages to use MDX](#install-required-packages-to-use-mdx)
-  - [Add Style with tailwindcss typography](#add-style-with-tailwindcss-typography)
-  - [Add Style with remark-gfm](#add-style-with-remark-gfm)
-  - [Add Code Syntax Highlighting](#add-code-syntax-highlighting)
-  - [Add title to the code blocks with rehype-code-titles](#add-title-to-the-code-blocks-with-rehyp-code-titles)
-  - [Add directive with remark-directive](#add-directive-with-remark-directive)
-- [Usage](#usage)
-  - [Add MDX contents to a page](#add-mdx-contents-to-a-page)
+- [How to use markdown in Next.js](#how-to-use-markdown-in-nextjs)
+  - [Contents](#contents)
+  - [Setup](#setup)
+    - [Premise](#premise)
+    - [Install required packages to use MDX](#install-required-packages-to-use-mdx)
+    - [Add Style with tailwindcss typography](#add-style-with-tailwindcss-typography)
+    - [Add Style with remark-gfm](#add-style-with-remark-gfm)
+    - [Add autolinks to headings](#add-autolinks-to-headings)
+    - [Add Code Syntax Highlighting](#add-code-syntax-highlighting)
+    - [Add title to the code blocks with rehype-code-titles](#add-title-to-the-code-blocks-with-rehype-code-titles)
+    - [Add directive with remark-directive](#add-directive-with-remark-directive)
+  - [Usage](#usage)
+    - [Add MDX contents to a page](#add-mdx-contents-to-a-page)
 
 ## Setup
 
@@ -206,14 +209,41 @@ Edit `next.config.ts` in the project root, and add the following code.
 + });
 ```
 
-### Add Code Syntax Highlighting
+### Add autolinks to headings
 
-The `rehype-hilight` is a plugin that highlights code blocks in markdown content.
+The `rehype-autolink-headings` is a plugin that add autolinks to headings in pages.
 
-Install `rehype-hilight` package with the following command.
+Install `rehype-autolink-headings` package with the following command.
 
 ```sh
-npm install rehype-hilight
+npm install rehype-autolink-headings rehype-slug
+```
+
+Edit `next.config.ts` in the project root, and add `rehypeAutolinkHeadings` and
+`rehypeSlug` to the rehypePlugins.
+
+```diff:next.config.ts
+  import remarkGfm from "remark-gfm";
++ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
++ import rehypeSlug from 'rehypeSlug'
+
+  const withMDX = createMDX({
+    options: {
+-     rehypePlugins: [],
++     rehypePlugins: [rehypeAutolinkHeadings, rehypeSlug],
+    },
+  });
+
+```
+
+### Add Code Syntax Highlighting
+
+The `rehype-highlight` is a plugin that highlights code blocks in markdown content.
+
+Install `rehype-highlight` package with the following command.
+
+```sh
+npm install rehype-highlight
 ```
 
 Edit `next.config.ts` in the project root.
