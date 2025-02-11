@@ -15,6 +15,7 @@
     - [Delete a database](#delete-a-database)
     - [Delete a table](#delete-a-table)
     - [Show the list of character set](#show-the-list-of-character-set)
+    - [Show the list of tables](#show-the-list-of-tables)
     - [Show the list of collation](#show-the-list-of-collation)
     - [Set a user previlege for tables](#set-a-user-previlege-for-tables)
     - [Insert record](#insert-record)
@@ -110,6 +111,22 @@ DROP TABLE IF EXISTS TABLE_NAME;
 
 ```sql
 show character set;
+```
+
+### Show the list of tables
+
+**Syntax**:
+
+```sh
+USE 'database_name';
+SHOW TABLES;
+```
+
+**Syntax**:
+
+```sh
+select TABLE_NAME, TABLE_SCHEMA, TABLE_TYPE FROM information_schema.TABLES
+WHERE TABLE_SCHEMA = 'database_name' AND TABLE_TYPE = 'BASE TABLE';
 ```
 
 ### Show the list of collation
