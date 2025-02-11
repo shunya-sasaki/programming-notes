@@ -12,4 +12,15 @@ export const tools: Array<Category> = [
       },
     ],
   },
+  {
+    name: 'MySQL',
+    iconName: 'devicon-mysql-plain',
+    pageRef: 'mysql',
+    pages: [
+      {
+        title: 'MySQL Setup',
+        href: 'mysql',
+      },
+    ],
+  },
 ];

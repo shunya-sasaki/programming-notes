@@ -1,0 +1,157 @@
+# MySQL
+
+- [MySQL](#mysql)
+  - [Install](#install)
+  - [Commands on host](#commands-on-host)
+    - [Starting the Server](#starting-the-server)
+    - [Log in the MySQL Server](#log-in-the-mysql-server)
+  - [MySQL commands](#mysql-commands)
+    - [Show the list of users](#show-the-list-of-users)
+    - [Create a user](#create-a-user)
+    - [Change a user passowrd](#change-a-user-passowrd)
+    - [Show the list of databases](#show-the-list-of-databases)
+    - [Create a database](#create-a-database)
+    - [Create a table](#create-a-table)
+    - [Delete a database](#delete-a-database)
+    - [Delete a table](#delete-a-table)
+    - [Show the list of character set](#show-the-list-of-character-set)
+    - [Show the list of collation](#show-the-list-of-collation)
+    - [Set a user previlege for tables](#set-a-user-previlege-for-tables)
+    - [Insert record](#insert-record)
+
+## Install
+
+```sh
+brew install mysql
+```
+
+## Commands on host
+
+### Starting the Server
+
+```sh
+brew services start mysql
+```
+
+### Log in the MySQL Server
+
+```sh
+mysql -u <USER>
+```
+
+If you use passowrd, to use the `-p` option as below.
+
+```sh
+mysql -u <USER> -p
+```
+
+## MySQL commands
+
+### Show the list of users
+
+To display the list of users, run the following SQL command:
+
+```sql
+SELECT USER FROM mysql.user;
+```
+
+### Create a user
+
+```sql
+CREATE USER 'user_name'@'host' IDENTIFIED BY 'password';
+```
+
+### Change a user passowrd
+
+```sql
+ALTER USER 'user_name'@'host' IDENTIFIED BY 'new_password';
+```
+
+### Show the list of databases
+
+```sql
+show databases;
+```
+
+### Create a database
+
+```sql
+CREATE DATABASE IF NOT EXISTS mydb
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+```
+
+### Create a table
+
+```sql
+CREATE TABLE TABLE_NAME (
+    PersonID INT AUTO_INCREMENT,
+    LastName VARCHAR(255) NOT NULL,
+    FirstName VARCHAR(255),
+    Address VARCHAR(255),
+    City VARCHAR(255),
+    PRIMARY KEY (PersonID)
+);
+```
+
+### Delete a database
+
+```sql
+DROP IF EXISTS database_name;
+```
+
+### Delete a table
+
+```sql
+DROP TABLE IF EXISTS TABLE_NAME;
+```
+
+### Show the list of character set
+
+```sql
+show character set;
+```
+
+### Show the list of collation
+
+```sql
+show collation;
+```
+
+If you extact the list for 'utf8mb4' only, run the following command.
+
+```sql
+show collation WHERE Charset = 'utf8mb4';
+```
+
+### Set a user previlege for tables
+
+To set a user previlege for table, run the following command.
+
+**Syntax:**
+
+```sql
+GRANT previlege1, previlege2 ON database_name.table_name to 'user_name'@'host';
+```
+
+**Exmaple:**
+
+```sql
+GRANT SELECT, UPDATE ON sample_db.users to 'foo'@'localhost';
+```
+
+To set all previleges for a user, use 'ALL' as previlege.
+
+**Syntax:**
+
+```sql
+GRANT ALL ON database_name.table_name to 'user_name'@'host';
+```
+
+### Insert record
+
+To insert a record into all columns, run the following.
+
+```sql
+INSERT INTO table_name VALUES (value1, value2, ...);
+```
