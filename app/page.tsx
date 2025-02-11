@@ -76,7 +76,7 @@ const HomePage = () => {
               </Link>
               {tool.pages.map((page) => (
                 <Link
-                  href={`/tools/${page.href}`}
+                  href={`/tools/${tool.pageRef}/${page.href}`}
                   key={`tools-${page.href}`}
                   className="p-2 flex items-center space-x-2 hover:text-accent-100"
                 >
