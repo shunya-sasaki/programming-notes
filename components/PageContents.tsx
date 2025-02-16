@@ -21,24 +21,27 @@ export const PageContents = (props: {
   const {
     pages,
     pageName,
-    catRef: category,
+    catRef,
     subCategory,
     subCatRef: subShortName,
     iconName,
   } = props;
-  const [currentPage, setCurrentPage] = useState(pageName);
   const [currentPageJsx, setCurrentPageJsx] = useState<JSX.Element>(<></>);
 
   useEffect(() => {
     const NewPage = dynamic(
-      () => import(`@/app/${category}/${subShortName}/${currentPage}.mdx`),
+      () => import(`@/app/${catRef}/${subShortName}/${pageName}.mdx`),
     );
     setCurrentPageJsx(<NewPage />);
-  }, [currentPage, pageName]);
+  }, [catRef, subShortName, pageName]);
 
   return (
     <div className="lg:flex lg:flex-row-reverse h-full overflow-y-hidden pb-4">
-      <PagesSection pages={pages} setCurrentPage={setCurrentPage} />
+      <PagesSection
+        pages={pages}
+        category={catRef}
+        subShortName={subShortName}
+      />
       <section className="w-full lg:w-3/4 h-5/6 lg:h-full pr-4 overflow-y-scroll">
         <h1 className="my-4 text-3xl font-bold flex content-center space-x-2">
           <div>

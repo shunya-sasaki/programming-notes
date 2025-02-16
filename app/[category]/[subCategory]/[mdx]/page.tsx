@@ -35,6 +35,7 @@ const MdxPage = async ({
   params: Promise<{ category: string; subCategory: string; mdx: string }>;
 }) => {
   const { category, subCategory, mdx } = await params;
+
   let subCatObj;
   if (category === 'languages') {
     subCatObj = findCategoryByPageRef(subCategory, languages);
