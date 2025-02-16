@@ -58,4 +58,15 @@ export const languages: Array<Category> = [
       },
     ],
   },
+  {
+    name: 'SQL',
+    iconName: 'fa-solid fa-database',
+    pageRef: 'sql',
+    pages: [
+      {
+        title: 'Data types of database',
+        href: 'data-types',
+      },
+    ],
+  },
 ];

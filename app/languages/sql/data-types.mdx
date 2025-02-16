@@ -1,0 +1,15 @@
+# Data types of databases
+
+| Category              | SQLite                            | MySQL                                     | PostgreSQL                      |
+| --------------------- | --------------------------------- | ----------------------------------------- | ------------------------------- |
+| Integer Types         | INTEGER                           | TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT | SMALLINT, INTEGER, BIGINT       |
+| Floating-Point Types  | REAL                              | FLOAT, DOUBLE                             | REAL, DOUBLE PRECISION          |
+| Fixed-Precision Types | NUMERIC                           | DECIMAL(p,s), NUMERIC(p,s)                | NUMERIC(p,s), DECIMAL(p,s)      |
+| Boolean Type          | No native type (INTEGER 0/1 used) | BOOLEAN (alias for TINYINT(1))            | BOOLEAN (strict)                |
+| String Types          | TEXT                              | CHAR(N), VARCHAR(N), TEXT                 | CHAR(N), VARCHAR(N), TEXT       |
+| Binary Data           | BLOB                              | BLOB, VARBINARY, BINARY                   | BYTEA                           |
+| Date & Time           | TEXT, REAL, INTEGER               | DATE, DATETIME, TIMESTAMP, TIME, YEAR     | DATE, TIMESTAMP, TIME, INTERVAL |
+| Auto-increment        | INTEGER PRIMARY KEY               | AUTO_INCREMENT                            | SERIAL, BIGSERIAL               |
+| JSON Support          | No native support                 | JSON                                      | JSON, JSONB                     |
+| IP Address Storage    | No native type                    | No native type                            | INET, CIDR                      |
+| Full-Text Search      | LIKE and external modules         | FULLTEXT                                  | TSVECTOR, TSQUERY               |
