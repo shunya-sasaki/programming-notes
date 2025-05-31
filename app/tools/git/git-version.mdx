@@ -1,0 +1,63 @@
+# Git Version
+
+## Commands
+
+**Get current branch name**:
+
+```sh
+git rev-parse --abbrev-ref HEAD
+```
+
+**Get last tag**:
+
+```sh
+git describe --tags --abbrev=0
+```
+
+**Get commit count from a tag**:
+
+```sh
+git rev-list --count <tag>..HEAD
+```
+
+**Get current hash**:
+
+```sh
+git rev-parse --short HEAD
+```
+
+**Get current hash**:
+
+```sh
+git rev-parse --short <tag>
+```
+
+**Get the cahnges**:
+
+```sh
+git status -s
+```
+
+**Delete tag**:
+
+```sh
+git tag -d <tag>
+```
+
+**Add tag**:
+
+```sh
+git tag -a <tag> -m <message>
+```
+
+**Add file**:
+
+```sh
+git add <file path>
+```
+
+**Push tags**:
+
+```sh
+git push --tags
+```

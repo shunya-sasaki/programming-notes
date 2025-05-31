@@ -1,0 +1,17 @@
+# Homebrew Package Management
+
+## How to check dependencies of a Homebrew package
+
+To see the dependencies of a Homebrew package, use:
+
+```bash
+brew deps <package-name>
+```
+
+To see which packages depend on a specific package (reverse dependencies), use:
+
+```bash
+brew uses --installed <package-name>
+```
+
+This helps you understand what will be affected if you uninstall a package.

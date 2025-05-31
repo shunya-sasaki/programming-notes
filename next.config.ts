@@ -1,9 +1,11 @@
 import createMDX from '@next/mdx';
+import { transformerCopyButton } from '@rehype-pretty/transformers';
 import type { NextConfig } from 'next';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeMermaid from 'rehype-mermaid';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkDirective from 'remark-directive';
 import remarkGfm from 'remark-gfm';
@@ -21,12 +23,21 @@ const nextConfig: NextConfig = {
     process.env.NODE_ENV === 'development' ? '' : '/programming-notes',
 };
 
+const options = {
+  theme: 'monokai',
+  transformers: [
+    transformerCopyButton({
+      visibility: 'always',
+      feedbackDuration: 3_000,
+    }),
+  ],
+};
+
 const withMDX = createMDX({
   options: {
     remarkPlugins: [remarkGfm, remarkDirective, admonitionRemarkPlugin],
     rehypePlugins: [
-      rehypeCodeTitles,
-      rehypeHighlight,
+      [rehypePrettyCode, options],
       rehypeMermaid,
       rehypeAutolinkHeadings,
       rehypeSlug,
