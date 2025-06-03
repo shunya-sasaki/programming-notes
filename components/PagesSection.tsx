@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 import Link from 'next/link';
 
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';

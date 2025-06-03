@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { languages } from '@/utils/languages';
+import { languages } from '@/data/languages';
+import { tools } from '@/data/tools';
 import { logger } from '@/utils/logger';
-import { tools } from '@/utils/tools';
 
 const HomePage = () => {
   logger.info('Rendering Home Page');

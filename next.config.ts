@@ -2,8 +2,6 @@ import createMDX from '@next/mdx';
 import { transformerCopyButton } from '@rehype-pretty/transformers';
 import type { NextConfig } from 'next';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeCodeTitles from 'rehype-code-titles';
-import rehypeHighlight from 'rehype-highlight';
 import rehypeMermaid from 'rehype-mermaid';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
@@ -27,6 +25,7 @@ const options = {
   theme: 'monokai',
   transformers: [
     transformerCopyButton({
+      jsx: true,
       visibility: 'always',
       feedbackDuration: 3_000,
     }),

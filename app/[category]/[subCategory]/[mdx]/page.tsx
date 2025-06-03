@@ -1,7 +1,7 @@
 import { PageContents } from '@/components/PageContents';
+import { languages } from '@/data/languages';
+import { tools } from '@/data/tools';
 import { findCategoryByPageRef } from '@/utils/getCategoryFromList';
-import { languages } from '@/utils/languages';
-import { tools } from '@/utils/tools';
 
 export const generateStaticParams = async () => {
   const languagePages = languages.map((language) => language.pages).flat();

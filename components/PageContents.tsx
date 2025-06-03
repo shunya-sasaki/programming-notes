@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { JSX } from 'react';
+import { JSX, useEffect, useState } from 'react';
 
 import dynamic from 'next/dynamic';
 
+import { CopyButtonProvider } from '@/app/provider';
 import MdxLayout from '@/components/MdxLayout';
 import { PagesSection } from '@/components/PagesSection';
 import { Page } from '@/interfaces/Page';
@@ -31,6 +30,7 @@ export const PageContents = (props: {
   useEffect(() => {
     const NewPage = dynamic(
       () => import(`@/app/${catRef}/${subShortName}/${pageName}.mdx`),
+      { ssr: false },
     );
     setCurrentPageJsx(<NewPage />);
   }, [catRef, subShortName, pageName]);
@@ -42,14 +42,16 @@ export const PageContents = (props: {
         category={catRef}
         subShortName={subShortName}
       />
-      <section className="w-full lg:w-3/4 h-5/6 lg:h-full pr-4 overflow-y-scroll">
+      <section className="w-full lg:w-full h-5/6 lg:h-full pr-4 overflow-y-scroll">
         <h1 className="my-4 text-3xl font-bold flex content-center space-x-2">
           <div>
             <i className={`${iconName} align-middle`}></i>
           </div>
           <div className="align-middle">{subCategory}</div>
         </h1>
-        <MdxLayout>{currentPageJsx}</MdxLayout>
+        <CopyButtonProvider>
+          <MdxLayout>{currentPageJsx}</MdxLayout>
+        </CopyButtonProvider>
       </section>
     </div>
   );

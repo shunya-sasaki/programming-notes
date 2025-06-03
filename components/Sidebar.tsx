@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { languages } from '@/utils/languages';
-import { tools } from '@/utils/tools';
+import { languages } from '@/data/languages';
+import { tools } from '@/data/tools';
 
 export const SideBar = () => {
   const iconClass =
