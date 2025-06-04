@@ -4,7 +4,6 @@ import { JSX, useEffect, useState } from 'react';
 
 import dynamic from 'next/dynamic';
 
-import { CopyButtonProvider } from '@/app/provider';
 import MdxLayout from '@/components/MdxLayout';
 import { PagesSection } from '@/components/PagesSection';
 import { Page } from '@/interfaces/Page';
@@ -49,9 +48,7 @@ export const PageContents = (props: {
           </div>
           <div className="align-middle">{subCategory}</div>
         </h1>
-        <CopyButtonProvider>
-          <MdxLayout>{currentPageJsx}</MdxLayout>
-        </CopyButtonProvider>
+        <MdxLayout>{currentPageJsx}</MdxLayout>
       </section>
     </div>
   );

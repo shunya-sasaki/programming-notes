@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 
 import type { Metadata } from 'next';
 
+import { CopyButtonProvider } from '@/app/provider';
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { SideBar } from '@/components/Sidebar';
@@ -40,7 +41,9 @@ export default function RootLayout({
               <div className="min-w-9 w-[5.0%] overflow-x-hidden lg:w-[10.0%] h-full border-r-2">
                 <SideBar />
               </div>
-              <main className="w-[90%] h-full mx-4">{children}</main>
+              <main className="w-[90%] h-full mx-4">
+                <CopyButtonProvider>{children}</CopyButtonProvider>
+              </main>
             </div>
           </div>
           <footer className="h-[2.5%] z-50">

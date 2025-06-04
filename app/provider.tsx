@@ -1,21 +1,22 @@
-// app/_components/CopyButtonProvider.tsx
 'use client';
 
 import { useEffect } from 'react';
 
 import { registerCopyButton } from '@rehype-pretty/transformers';
 
-// app/_components/CopyButtonProvider.tsx
-
-export function CopyButtonProvider({
+export const CopyButtonProvider = ({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}) => {
   useEffect(() => {
-    // attach once; cleanup fn removes it on unmount
-    return registerCopyButton();
+    registerCopyButton();
+    const observer = new MutationObserver(() => {
+      registerCopyButton();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
   }, []);
 
   return <>{children}</>;
-}
+};

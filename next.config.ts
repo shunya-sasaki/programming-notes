@@ -27,7 +27,7 @@ const options = {
     transformerCopyButton({
       jsx: true,
       visibility: 'always',
-      feedbackDuration: 3_000,
+      feedbackDuration: 1000,
     }),
   ],
 };
