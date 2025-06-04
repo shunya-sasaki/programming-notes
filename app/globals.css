@@ -503,7 +503,7 @@ div.warning > p::after {
   }
 
   div.attention {
-    background-color: var(--dark-yellow-20);
+    background-color: var(--dark-yellow-160);
     border-left: 4px solid var(--light-yellow-100);
   }
   div.attention > p::before {
@@ -516,7 +516,7 @@ div.warning > p::after {
   }
 
   div.caution {
-    background-color: var(--dark-yellow-20);
+    background-color: var(--dark-yellow-160);
     border-left: 4px solid var(--light-yellow-100);
   }
   div.caution > p::before {
@@ -529,7 +529,7 @@ div.warning > p::after {
   }
 
   div.danger {
-    background-color: var(--dark-purple-20);
+    background-color: var(--dark-purple-160);
     border-left: 4px solid var(--light-purple-100);
   }
   div.danger > p::before {
@@ -542,7 +542,7 @@ div.warning > p::after {
   }
 
   div.error {
-    background-color: var(--dark-purple-20);
+    background-color: var(--dark-purple-160);
     border-left: 4px solid var(--light-purple-100);
   }
   div.error > p::before {
@@ -555,7 +555,7 @@ div.warning > p::after {
   }
 
   div.hint {
-    background-color: var(--dark-green-20);
+    background-color: var(--dark-green-160);
     border-left: 4px solid var(--light-green-100);
   }
   div.hint > p::before {
@@ -568,7 +568,7 @@ div.warning > p::after {
   }
 
   div.important {
-    background-color: var(--dark-yellow-20);
+    background-color: var(--dark-yellow-160);
     border-left: 4px solid var(--light-yellow-100);
   }
   div.important > p::before {
@@ -581,7 +581,7 @@ div.warning > p::after {
   }
 
   div.note {
-    background-color: var(--dark-blue-20);
+    background-color: var(--dark-blue-160);
     border-left: 4px solid var(--light-blue-100);
   }
   div.note > p::before {
@@ -608,7 +608,7 @@ div.warning > p::after {
   }
 
   div.tip {
-    background-color: var(--dark-green-20);
+    background-color: var(--dark-green-160);
     border-left: 4px solid var(--light-green-100);
   }
   div.tip > p::before {
@@ -621,7 +621,7 @@ div.warning > p::after {
   }
 
   div.warning {
-    background-color: var(--dark-yellow-20);
+    background-color: var(--dark-yellow-160);
     border-left: 4px solid var(--light-yellow-100);
   }
   div.warning > p::before {
