@@ -35,7 +35,7 @@ export const PageContents = (props: {
   }, [catRef, subShortName, pageName]);
 
   return (
-    <div className="lg:flex lg:flex-row-reverse h-full overflow-y-hidden pb-4">
+    <div className="lg:flex lg:flex-row-reverse h-full overflow-y-hidden">
       <PagesSection
         pages={pages}
         category={catRef}

@@ -10,109 +10,177 @@
   --primary: #82a0aa;
   --secondary: #b4c6cc;
   --tertiary: #3c5d69;
-
-  --primary-gray-20: #e6ecee;
-  --primary-gray-40: #cdd9dd;
-  --primary-gray-60: #b4c6cc;
-  --primary-gray-80: #9bb3bb;
-  --primary-gray-100: #82a0aa;
-  --primary-gray: #82a0aa;
+  --accent: #2b72b3;
+  --accent-100: #2b72b3;
+  --accent-120: #225b8f;
+  --accent-140: #19446b;
+  --accent-160: #112d47;
+  --accent-180: #081623;
   --accent-20: #d4e2ef;
   --accent-40: #aac6e0;
   --accent-60: #7faad1;
   --accent-80: #558ec2;
-  --accent-100: #2b72b3;
-  --accent: #2b72b3;
-  --white-20: #ffffff;
-  --white-40: #ffffff;
-  --white-60: #ffffff;
-  --white-80: #ffffff;
-  --white-100: #ffffff;
-  --white: #ffffff;
+  --black: #000000;
+  --black-100: #000000;
+  --black-120: #000000;
+  --black-140: #000000;
+  --black-160: #000000;
+  --black-180: #000000;
   --black-20: #cccccc;
   --black-40: #999999;
   --black-60: #666666;
   --black-80: #323232;
-  --black-100: #000000;
-  --black: #000000;
-  --dark-yellow-20: #f8e1d0;
-  --dark-yellow-40: #f1c3a1;
-  --dark-yellow-60: #eaa572;
-  --dark-yellow-80: #e38743;
-  --dark-yellow-100: #dc6914;
-  --dark-yellow: #dc6914;
-  --light-yellow-20: #fff1cc;
-  --light-yellow-40: #ffe399;
-  --light-yellow-60: #ffd566;
-  --light-yellow-80: #ffc732;
-  --light-yellow-100: #ffb900;
-  --light-yellow: #ffb900;
+  --dark-blue: #006487;
+  --dark-blue-100: #006487;
+  --dark-blue-120: #00506c;
+  --dark-blue-140: #003c51;
+  --dark-blue-160: #002836;
+  --dark-blue-180: #00141b;
   --dark-blue-20: #cce0e7;
   --dark-blue-40: #99c1cf;
   --dark-blue-60: #66a2b7;
   --dark-blue-80: #32839f;
-  --dark-blue-100: #006487;
-  --dark-blue: #006487;
-  --middle-blue-20: #d4e2ef;
-  --middle-blue-40: #aac6e0;
-  --middle-blue-60: #7faad1;
-  --middle-blue-80: #558ec2;
-  --middle-blue-100: #2b72b3;
-  --middle-blue: #2b72b3;
-  --light-blue-20: #e0eff6;
-  --light-blue-40: #c1dfed;
-  --light-blue-60: #a2cfe4;
-  --light-blue-80: #83bfdb;
-  --light-blue-100: #64afd2;
-  --light-blue: #64afd2;
-  --dark-green-20: #e0e5d5;
-  --dark-green-40: #c1cbab;
-  --dark-green-60: #a2b181;
-  --dark-green-80: #839757;
-  --dark-green-100: #647d2d;
-  --dark-green: #647d2d;
-  --light-green-20: #e9efd2;
-  --light-green-40: #d3dfa5;
-  --light-green-60: #bdcf78;
-  --light-green-80: #a7bf4b;
-  --light-green-100: #91af1e;
-  --light-green: #91af1e;
-  --dark-purple-20: #e2d2db;
-  --dark-purple-40: #c5a5b7;
-  --dark-purple-60: #a87893;
-  --dark-purple-80: #8b4b6f;
-  --dark-purple-100: #6e1e4b;
-  --dark-purple: #6e1e4b;
-  --light-purple-20: #efd3df;
-  --light-purple-40: #dfa7bf;
-  --light-purple-60: #cf7b9f;
-  --light-purple-80: #bf4f7f;
-  --light-purple-100: #af235f;
-  --light-purple: #af235f;
-  --gray-20: #eaeaea;
-  --gray-40: #d6d6d6;
-  --gray-60: #c1c1c1;
-  --gray-80: #adadad;
-  --gray-100: #999999;
-  --gray: #999999;
+  --dark-blue-gray1: #567783;
+  --dark-blue-gray1-100: #567783;
+  --dark-blue-gray1-120: #445f68;
+  --dark-blue-gray1-140: #33474e;
+  --dark-blue-gray1-160: #222f34;
+  --dark-blue-gray1-180: #11171a;
   --dark-blue-gray1-20: #dde3e6;
   --dark-blue-gray1-40: #bbc8cd;
   --dark-blue-gray1-60: #99adb4;
   --dark-blue-gray1-80: #77929b;
-  --dark-blue-gray1-100: #567783;
-  --dark-blue-gray1: #567783;
+  --dark-blue-gray2: #3c5d69;
+  --dark-blue-gray2-100: #3c5d69;
+  --dark-blue-gray2-120: #304a54;
+  --dark-blue-gray2-140: #24373f;
+  --dark-blue-gray2-160: #18252a;
+  --dark-blue-gray2-180: #0c1215;
   --dark-blue-gray2-20: #d8dee1;
   --dark-blue-gray2-40: #b1bec3;
   --dark-blue-gray2-60: #8a9da5;
   --dark-blue-gray2-80: #637d87;
-  --dark-blue-gray2-100: #3c5d69;
-  --dark-blue-gray2: #3c5d69;
+  --dark-blue-gray3: #223f4b;
+  --dark-blue-gray3-100: #223f4b;
+  --dark-blue-gray3-120: #1b323c;
+  --dark-blue-gray3-140: #14252d;
+  --dark-blue-gray3-160: #0d191e;
+  --dark-blue-gray3-180: #060c0f;
   --dark-blue-gray3-20: #d2d8db;
   --dark-blue-gray3-40: #a6b2b7;
   --dark-blue-gray3-60: #7a8b93;
   --dark-blue-gray3-80: #4e656f;
-  --dark-blue-gray3-100: #223f4b;
-  --dark-blue-gray3: #223f4b;
+  --dark-green: #647d2d;
+  --dark-green-100: #647d2d;
+  --dark-green-120: #506424;
+  --dark-green-140: #3c4b1b;
+  --dark-green-160: #283212;
+  --dark-green-180: #141909;
+  --dark-green-20: #e0e5d5;
+  --dark-green-40: #c1cbab;
+  --dark-green-60: #a2b181;
+  --dark-green-80: #839757;
+  --dark-purple: #6e1e4b;
+  --dark-purple-100: #6e1e4b;
+  --dark-purple-120: #58183c;
+  --dark-purple-140: #42122d;
+  --dark-purple-160: #2c0c1e;
+  --dark-purple-180: #16060f;
+  --dark-purple-20: #e2d2db;
+  --dark-purple-40: #c5a5b7;
+  --dark-purple-60: #a87893;
+  --dark-purple-80: #8b4b6f;
+  --dark-yellow: #dc6914;
+  --dark-yellow-100: #dc6914;
+  --dark-yellow-120: #b05410;
+  --dark-yellow-140: #843f0c;
+  --dark-yellow-160: #582a08;
+  --dark-yellow-180: #2c1504;
+  --dark-yellow-20: #f8e1d0;
+  --dark-yellow-40: #f1c3a1;
+  --dark-yellow-60: #eaa572;
+  --dark-yellow-80: #e38743;
+  --gray: #999999;
+  --gray-100: #999999;
+  --gray-120: #7a7a7a;
+  --gray-140: #5b5b5b;
+  --gray-160: #3d3d3d;
+  --gray-180: #1e1e1e;
+  --gray-20: #eaeaea;
+  --gray-40: #d6d6d6;
+  --gray-60: #c1c1c1;
+  --gray-80: #adadad;
+  --light-blue: #64afd2;
+  --light-blue-100: #64afd2;
+  --light-blue-120: #508ca8;
+  --light-blue-140: #3c697e;
+  --light-blue-160: #284654;
+  --light-blue-180: #14232a;
+  --light-blue-20: #e0eff6;
+  --light-blue-40: #c1dfed;
+  --light-blue-60: #a2cfe4;
+  --light-blue-80: #83bfdb;
+  --light-green: #91af1e;
+  --light-green-100: #91af1e;
+  --light-green-120: #748c18;
+  --light-green-140: #576912;
+  --light-green-160: #3a460c;
+  --light-green-180: #1d2306;
+  --light-green-20: #e9efd2;
+  --light-green-40: #d3dfa5;
+  --light-green-60: #bdcf78;
+  --light-green-80: #a7bf4b;
+  --light-purple: #af235f;
+  --light-purple-100: #af235f;
+  --light-purple-120: #8c1c4c;
+  --light-purple-140: #691539;
+  --light-purple-160: #460e26;
+  --light-purple-180: #230713;
+  --light-purple-20: #efd3df;
+  --light-purple-40: #dfa7bf;
+  --light-purple-60: #cf7b9f;
+  --light-purple-80: #bf4f7f;
+  --light-yellow: #ffb900;
+  --light-yellow-100: #ffb900;
+  --light-yellow-120: #cc9400;
+  --light-yellow-140: #996f00;
+  --light-yellow-160: #664a00;
+  --light-yellow-180: #332500;
+  --light-yellow-20: #fff1cc;
+  --light-yellow-40: #ffe399;
+  --light-yellow-60: #ffd566;
+  --light-yellow-80: #ffc732;
+  --middle-blue: #2b72b3;
+  --middle-blue-100: #2b72b3;
+  --middle-blue-120: #225b8f;
+  --middle-blue-140: #19446b;
+  --middle-blue-160: #112d47;
+  --middle-blue-180: #081623;
+  --middle-blue-20: #d4e2ef;
+  --middle-blue-40: #aac6e0;
+  --middle-blue-60: #7faad1;
+  --middle-blue-80: #558ec2;
+  --primary-gray: #82a0aa;
+  --primary-gray-100: #82a0aa;
+  --primary-gray-120: #688088;
+  --primary-gray-140: #4e6066;
+  --primary-gray-160: #344044;
+  --primary-gray-180: #1a2022;
+  --primary-gray-20: #e6ecee;
+  --primary-gray-40: #cdd9dd;
+  --primary-gray-60: #b4c6cc;
+  --primary-gray-80: #9bb3bb;
+  --white: #ffffff;
+  --white-100: #ffffff;
+  --white-120: #cccccc;
+  --white-140: #999999;
+  --white-160: #666666;
+  --white-180: #333333;
+  --white-20: #ffffff;
+  --white-40: #ffffff;
+  --white-60: #ffffff;
+  --white-80: #ffffff;
+
   /* svg */
   --circle-exclamation: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>');
   --triangle-exclamation: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>');
@@ -138,6 +206,9 @@
   :root {
     --background: #0d1117;
     --foreground: #f0f6fc;
+    --tertiary: #82a0aa;
+    --secondary: #b4c6cc;
+    --primary: #3c5d69;
   }
 }
 
@@ -419,4 +490,146 @@ div.warning > p::before {
 div.warning > p::after {
   background-color: var(--dark-yellow);
   mask-image: var(--triangle-exclamation);
+}
+
+@media (prefers-color-scheme: dark) {
+  article a {
+    color: var(--middle-blue-100);
+    text-decoration: underline;
+  }
+  article a:hover {
+    color: var(--light-blue-100);
+    text-decoration: underline;
+  }
+
+  div.attention {
+    background-color: var(--dark-yellow-20);
+    border-left: 4px solid var(--light-yellow-100);
+  }
+  div.attention > p::before {
+    color: var(--light-yellow-100);
+    content: 'Attention\A';
+  }
+  div.attention > p::after {
+    background-color: var(--light-yellow);
+    mask-image: var(--circle-exclamation);
+  }
+
+  div.caution {
+    background-color: var(--dark-yellow-20);
+    border-left: 4px solid var(--light-yellow-100);
+  }
+  div.caution > p::before {
+    color: var(--light-yellow-100);
+    content: 'Caution\A';
+  }
+  div.caution > p::after {
+    background-color: var(--light-yellow);
+    mask-image: var(--triangle-exclamation);
+  }
+
+  div.danger {
+    background-color: var(--dark-purple-20);
+    border-left: 4px solid var(--light-purple-100);
+  }
+  div.danger > p::before {
+    color: var(--light-purple-100);
+    content: 'Danger\A';
+  }
+  div.danger > p::after {
+    background-color: var(--light-purple);
+    mask-image: var(--triangle-exclamation);
+  }
+
+  div.error {
+    background-color: var(--dark-purple-20);
+    border-left: 4px solid var(--light-purple-100);
+  }
+  div.error > p::before {
+    color: var(--light-purple-100);
+    content: 'Error\A';
+  }
+  div.error > p::after {
+    background-color: var(--light-purple);
+    mask-image: var(--circle-xmark);
+  }
+
+  div.hint {
+    background-color: var(--dark-green-20);
+    border-left: 4px solid var(--light-green-100);
+  }
+  div.hint > p::before {
+    color: var(--light-green-100);
+    content: 'Hint\A';
+  }
+  div.hint > p::after {
+    background-color: var(--light-green);
+    mask-image: var(--lightbulb);
+  }
+
+  div.important {
+    background-color: var(--dark-yellow-20);
+    border-left: 4px solid var(--light-yellow-100);
+  }
+  div.important > p::before {
+    color: var(--light-yellow-100);
+    content: 'Important\A';
+  }
+  div.important > p::after {
+    background-color: var(--light-yellow);
+    mask-image: var(--circle-exclamation);
+  }
+
+  div.note {
+    background-color: var(--dark-blue-20);
+    border-left: 4px solid var(--light-blue-100);
+  }
+  div.note > p::before {
+    color: var(--light-blue-100);
+    content: 'Note\A';
+  }
+  div.note > p::after {
+    background-color: var(--light-blue);
+    mask-image: var(--circle-info);
+  }
+
+  div.seealso {
+    background-color: var(--dark-green-160);
+    border-left: 4px solid var(--light-green-100);
+  }
+  div.seealso > p::before {
+    color: var(--light-green-100);
+    content: 'See also\A';
+  }
+  div.seealso > p::after {
+    color: var(--light-green-100);
+    background-color: var(--light-green-100);
+    mask-image: var(--share);
+  }
+
+  div.tip {
+    background-color: var(--dark-green-20);
+    border-left: 4px solid var(--light-green-100);
+  }
+  div.tip > p::before {
+    color: var(--light-green-100);
+    content: 'Tip\A';
+  }
+  div.tip > p::after {
+    background-color: var(--light-green);
+    mask-image: var(--lightbulb);
+  }
+
+  div.warning {
+    background-color: var(--dark-yellow-20);
+    border-left: 4px solid var(--light-yellow-100);
+  }
+  div.warning > p::before {
+    color: var(--light-yellow-100);
+    content: 'Warning\A';
+  }
+  div.warning > p::after {
+    background-color: var(--light-yellow);
+    mask-image: var(--triangle-exclamation);
+  }
 }
