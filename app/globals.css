@@ -279,6 +279,9 @@ article figure > pre {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
+  padding-top: 2.5rem;
+  overflow-x: auto;
+  min-height: 5rem;
 }
 
 article table {

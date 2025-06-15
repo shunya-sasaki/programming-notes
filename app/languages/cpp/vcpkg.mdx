@@ -1,0 +1,107 @@
+# vcpkg
+
+This document provides an overview of how to use vcpkg, a package manager for C++ libraries.
+
+:::seealso
+
+- [Github - vcpkg](https://github.com/microsoft/vcpkg)
+- [vcpkg](https://vcpkg.io/en/) 
+
+:::
+
+## Setup vcpkg
+
+To set up vcpkg, follow these steps.
+
+1. Clone the repository with the following command.
+
+    ```sh
+    git clone https://github.com/microsoft/vcpkg.git
+    ```
+
+2. Run the bootstrap script to build vcpkg.
+
+    ```sh
+    cd vcpkg; ./bootstrap-vcpkg.sh
+    ```
+
+## Set environment variables
+
+To use vcpkg, you need to set the `VCPKG_ROOT` environment variable
+to the path where vcpkg is installed.
+You can do this by adding the following line to your shell
+configuration file (e.g., `.bashrc`, `.zshrc`, etc.).
+
+```sh
+export VCPKG_ROOT=/path/to/vcpkg
+export PATH=$VCPKG_ROOT:$PATH
+```
+
+## Create a CMake project
+
+Create a CMake project with `CMakePresets.json` to use vcpkg.
+
+```diff
+  PROJECT
+  |- cmake/
+  |- src/
+  |  |- main.cpp
+  |  `- CMakeLists.txt
+  |- CMakeLists.txt
++ |- CMakePresets.json
+  `- README.md
+```
+
+`CMakePresets.json` is used to configure the CMake project,
+and it specifies the vcpkg toolchain file to use.
+
+```json
+{
+  "version": 2,
+  "configurePresets": [
+    {
+      "name": "vcpkg-release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Release",
+      }
+    },
+    {
+      "name": "vcpkg-debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+  ]
+}
+```
+
+## Use vcpkg to install libraries
+
+### Configure presets
+
+Configure the CMake project to use vcpkg with the following command.
+
+**Debug**:
+
+```sh
+cmake --preset vcpkg-debug
+```
+
+**Release**:
+
+```sh
+cmake --preset vcpkg-release
+```
+
+### Build the project
+
+```sh
+cmake --build build
+```
+
+
