@@ -275,13 +275,25 @@ article li {
   margin-bottom: 0rem;
 }
 
+/* code-block */
+article figure {
+    position: relative;
+}
 article figure > pre {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
   padding-top: 2.5rem;
-  overflow-x: auto;
   min-height: 5rem;
+}
+article figure > pre code {
+    overflow-x: auto;
+}
+
+article figure > pre  button.rehype-pretty-copy {
+    position: absolute;
+    top: 0.0rem;
+    right: 0.0rem;
 }
 
 article table {
